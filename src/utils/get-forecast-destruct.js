@@ -6,12 +6,13 @@ const forecastdtl = (lat, log, callback) => {
     request({ url, json: true }, (error, wresponse) => {
 
         if (error) {
-            callback('The weather service is not available', {undefined});
+            callback('The weather service is not available', undefined);
         } else if (wresponse.body.error) {
-            callback('Unable to get the weather for the location', {undefined});
+            callback('Unable to get the weather for the location', undefined);
         } else {
             callback(undefined, {
                 Temperature: wresponse.body.currently.temperature,
+                Summary: wresponse.body.currently.summary,
                 Preciption: wresponse.body.currently.precipProbability
             })
         }

@@ -58,11 +58,11 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    ggeocodejs.geocode(req.query.address, (error, { latitude, longtitude, location }) => {
+    ggeocodejs.geocode(req.query.address, (error, { latitude, longtitude, location } = {}) => {
         if (error) {
             return res.send({ error })
         }
-        gforecastjs.forecastdtl(latitude, longtitude, (error, { Temperature, Preciption }) => {
+        gforecastjs.forecastdtl(latitude, longtitude, (error, { Temperature, Preciption, Summary } = {}) => {
             if (error) {
                 return res.send({ error })
             }
@@ -71,6 +71,7 @@ app.get('/weather', (req, res) => {
                 latitude,
                 longtitude,
                 Temperature,
+                Summary,
                 Preciption: Preciption + '% of rain'
             })
         })
