@@ -13,7 +13,7 @@ const forecastdtl = (lat, log, callback) => {
             callback(undefined, {
                 Temperature: wresponse.body.currently.temperature,
                 Summary: wresponse.body.currently.summary,
-                Preciption: `${wresponse.body.currently.summary}. Current Temperature is${wresponse.body.currently.temperature} with ${wresponse.body.currently.precipProbability}% of rain`
+                Preciption: `${wresponse.body.currently.summary}. Current Temperature is ${wresponse.body.currently.temperature} with ${wresponse.body.currently.precipProbability}% of rain`
             })
         }
     })
