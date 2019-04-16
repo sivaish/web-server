@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
             messageOne.textContent = data.error
         } else {
             messageOne.textContent = data.location
-            messageTwo.textContent = data.Summary
+            messageTwo.textContent = data.Preciption
         }
     })
 })

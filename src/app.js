@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
                 longtitude,
                 Temperature,
                 Summary,
-                Preciption: Preciption + '% of rain'
+                Preciption
             })
         })
     })
