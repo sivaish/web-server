@@ -22,7 +22,7 @@ hbs.registerPartials(partialPath)
 // Static Assest location
 app.use(express.static(publicDirectryPath))
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 //geocode requirement
 const ggeocodejs = require('./utils/get-geocode-destruct')
@@ -95,5 +95,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server started in host 3000');
+    console.log('Server started in host' + host);
 })
